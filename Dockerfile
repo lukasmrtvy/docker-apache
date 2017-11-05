@@ -4,7 +4,8 @@ RUN apk --no-cache update && apk add --no-cache \
         apache2 \
         apache2-ssl \
         apache2-proxy \
-        apache2-proxy-html 
+        apache2-proxy-html \
+        tzdata
 
 RUN mkdir -p  /etc/apache2/sites-enabled/ /etc/apache2/ssl/ /run/apache2 && \
     ln -s /usr/lib/libxml2.so.2 /usr/lib/libxml2.so && \
