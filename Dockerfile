@@ -14,7 +14,7 @@ RUN mkdir -p  /etc/apache2/sites-enabled/ /etc/apache2/ssl/ /run/apache2 && \
     ln -s /dev/stderr /var/log/apache2/error.log && \
     ln -s /dev/stdout /var/log/apache2/access.log 
 
-VOLUME /etc/apache2/conf.d/
+# VOLUME /etc/apache2/conf.d/
 
 EXPOSE 80 443
 
