@@ -1,7 +1,10 @@
-FROM alpine:latest
+FROM alpine:3.7
+
+ENV VERSION 2.4.33
+ENV URL https://github.com/apache/httpd
 
 RUN apk --no-cache update && apk add --no-cache \
-        apache2 \
+        apache2==${VERSION} \
         apache2-ssl \
         apache2-proxy \
         apache2-proxy-html \
@@ -17,5 +20,10 @@ RUN mkdir -p  /etc/apache2/sites-enabled/ /etc/apache2/ssl/ /run/apache2 && \
 # VOLUME /etc/apache2/conf.d/
 
 EXPOSE 80 443
+
+USER www-data
+
+LABEL version=${VERSION}
+LABEL url=${URL}
 
 CMD httpd -DFOREGROUND
