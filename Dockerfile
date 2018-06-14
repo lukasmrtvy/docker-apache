@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV VERSION 2.4.33
+ENV VERSION 2.4.33-r0
 ENV URL https://github.com/apache/httpd
 
 RUN apk --no-cache update && apk add --no-cache \
