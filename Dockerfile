@@ -21,7 +21,7 @@ RUN mkdir -p  /etc/apache2/sites-enabled/ /etc/apache2/ssl/ /run/apache2 && \
 
 EXPOSE 80 443
 
-USER apache
+#USER apache
 
 LABEL version=${VERSION}
 LABEL url=${URL}
